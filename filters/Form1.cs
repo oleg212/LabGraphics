@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace filters
 {
 
-    
+
     public partial class Form1 : Form
     {
         int[,] ker()
@@ -107,7 +107,7 @@ namespace filters
                 pictureBox1.Image = image;
                 pictureBox1.Refresh();
 
-                
+
             }
             progressBar1.Value = 0;
             pictureBox2.Visible = false;
@@ -135,7 +135,7 @@ namespace filters
             filters filter = new MedianFilter();
             pictureBox2.Visible = true;
             backgroundWorker1.RunWorkerAsync(filter);
-            
+
         }
 
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,6 +173,12 @@ namespace filters
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
+        private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters filter = new GreyWorldFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
         private void binaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             filters filter = new BinaryFilter();
@@ -197,20 +203,20 @@ namespace filters
         }
 
         private void button2_Click(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             trackBar1.Visible = false;
-            
+
             checkBox9.Visible = false;
             checkBox10.Visible = false;
-            
-            
+
+
             checkBox13.Visible = false;
             checkBox14.Visible = false;
-            
+
             checkBox17.Visible = false;
             checkBox18.Visible = false;
             checkBox19.Visible = false;
@@ -227,17 +233,17 @@ namespace filters
             checkBox30.Visible = false;
             checkBox31.Visible = false;
             checkBox32.Visible = false;
-            
+
             checkBox38.Visible = false;
-           
+
             checkBox40.Visible = false;
-            
+
             checkBox46.Visible = false;
-            
+
             checkBox48.Visible = false;
-            
+
             checkBox54.Visible = false;
-            
+
             button2.Visible = false;
             button3.Visible = false;
 
@@ -287,7 +293,7 @@ namespace filters
         {
             filters filter = new GlassFilter();
             backgroundWorker1.RunWorkerAsync(filter);
-            
+
         }
 
         private void смещениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -297,7 +303,7 @@ namespace filters
 
         private void выделениеГраницToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void переносToolStripMenuItem_Click(object sender, EventArgs e)
@@ -356,7 +362,30 @@ namespace filters
             backgroundWorker1.RunWorkerAsync(filter);
 
         }
+
+        private void опорныйЦветToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters filter = new SourceColorFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+            /*            pictureBox1.ContextMenu = new ContextMenu();
+                        pictureBox1.MouseClick += new MouseEventHandler(pictureBox1_MouseClick);*/
+        }
+
+/*        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            using (var bmp = new Bitmap(pictureBox1.Image.Width, pictureBox1.Image.Height))
+            {
+                pictureBox1.DrawToBitmap(bmp, pictureBox1.ClientRectangle);
+                var color = bmp.GetPixel(e.X, e.Y);
+                var red = color.R;
+                var green = color.G;
+                var blue = color.B;
+
+                pictureBox1.BackColor = (pictureBox1.Image as Bitmap).GetPixel(e.X, e.Y);
+            }
+        }*/
     }
+
 
     public abstract class filters
     {

@@ -45,9 +45,11 @@ namespace filters
             this.выделениеГраницToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.максимумToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.глобальныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.растяжениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.идеальныйОтражательToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.серыйМирToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.искажениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +97,7 @@ namespace filters
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.максимумToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.опорныйЦветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -188,28 +190,28 @@ namespace filters
             // медианныйToolStripMenuItem
             // 
             this.медианныйToolStripMenuItem.Name = "медианныйToolStripMenuItem";
-            this.медианныйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.медианныйToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.медианныйToolStripMenuItem.Text = "Медианный";
             this.медианныйToolStripMenuItem.Click += new System.EventHandler(this.медианныйToolStripMenuItem_Click);
             // 
             // размытиеToolStripMenuItem
             // 
             this.размытиеToolStripMenuItem.Name = "размытиеToolStripMenuItem";
-            this.размытиеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.размытиеToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.размытиеToolStripMenuItem.Text = "Размытие";
             this.размытиеToolStripMenuItem.Click += new System.EventHandler(this.размытиеToolStripMenuItem_Click);
             // 
             // нормальныйToolStripMenuItem
             // 
             this.нормальныйToolStripMenuItem.Name = "нормальныйToolStripMenuItem";
-            this.нормальныйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.нормальныйToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.нормальныйToolStripMenuItem.Text = "Нормальный";
             this.нормальныйToolStripMenuItem.Click += new System.EventHandler(this.нормальныйToolStripMenuItem_Click);
             // 
             // резкостьToolStripMenuItem
             // 
             this.резкостьToolStripMenuItem.Name = "резкостьToolStripMenuItem";
-            this.резкостьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.резкостьToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.резкостьToolStripMenuItem.Text = "Резкость";
             this.резкостьToolStripMenuItem.Click += new System.EventHandler(this.резкостьToolStripMenuItem_Click);
             // 
@@ -219,7 +221,7 @@ namespace filters
             this.xToolStripMenuItem,
             this.yToolStripMenuItem});
             this.выделениеГраницToolStripMenuItem.Name = "выделениеГраницToolStripMenuItem";
-            this.выделениеГраницToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выделениеГраницToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.выделениеГраницToolStripMenuItem.Text = "Выделение границ";
             this.выделениеГраницToolStripMenuItem.Click += new System.EventHandler(this.выделениеГраницToolStripMenuItem_Click);
             // 
@@ -237,11 +239,20 @@ namespace filters
             this.yToolStripMenuItem.Text = "Y";
             this.yToolStripMenuItem.Click += new System.EventHandler(this.yToolStripMenuItem_Click);
             // 
+            // максимумToolStripMenuItem
+            // 
+            this.максимумToolStripMenuItem.Name = "максимумToolStripMenuItem";
+            this.максимумToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.максимумToolStripMenuItem.Text = "Максимум";
+            this.максимумToolStripMenuItem.Click += new System.EventHandler(this.максимумToolStripMenuItem_Click);
+            // 
             // глобальныеToolStripMenuItem
             // 
             this.глобальныеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.растяжениеToolStripMenuItem,
-            this.идеальныйОтражательToolStripMenuItem});
+            this.идеальныйОтражательToolStripMenuItem,
+            this.серыйМирToolStripMenuItem,
+            this.опорныйЦветToolStripMenuItem});
             this.глобальныеToolStripMenuItem.Name = "глобальныеToolStripMenuItem";
             this.глобальныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.глобальныеToolStripMenuItem.Text = "Глобальные";
@@ -259,6 +270,13 @@ namespace filters
             this.идеальныйОтражательToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.идеальныйОтражательToolStripMenuItem.Text = "Идеальный отражатель";
             this.идеальныйОтражательToolStripMenuItem.Click += new System.EventHandler(this.идеальныйОтражательToolStripMenuItem_Click);
+            // 
+            // серыйМирToolStripMenuItem
+            // 
+            this.серыйМирToolStripMenuItem.Name = "серыйМирToolStripMenuItem";
+            this.серыйМирToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.серыйМирToolStripMenuItem.Text = "Серый Мир";
+            this.серыйМирToolStripMenuItem.Click += new System.EventHandler(this.серыйМирToolStripMenuItem_Click);
             // 
             // искажениеToolStripMenuItem
             // 
@@ -307,40 +325,40 @@ namespace filters
             // binaryToolStripMenuItem
             // 
             this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
-            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.binaryToolStripMenuItem.Text = "binary";
             this.binaryToolStripMenuItem.Click += new System.EventHandler(this.binaryToolStripMenuItem_Click);
             // 
             // dilationToolStripMenuItem
             // 
             this.dilationToolStripMenuItem.Name = "dilationToolStripMenuItem";
-            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.dilationToolStripMenuItem.Text = "dilation";
             this.dilationToolStripMenuItem.Click += new System.EventHandler(this.dilationToolStripMenuItem_Click);
             // 
             // erosionToolStripMenuItem
             // 
             this.erosionToolStripMenuItem.Name = "erosionToolStripMenuItem";
-            this.erosionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.erosionToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.erosionToolStripMenuItem.Text = "erosion";
             this.erosionToolStripMenuItem.Click += new System.EventHandler(this.erosionToolStripMenuItem_Click);
             // 
             // openingToolStripMenuItem
             // 
             this.openingToolStripMenuItem.Name = "openingToolStripMenuItem";
-            this.openingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.openingToolStripMenuItem.Text = "opening";
             // 
             // closingToolStripMenuItem
             // 
             this.closingToolStripMenuItem.Name = "closingToolStripMenuItem";
-            this.closingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.closingToolStripMenuItem.Text = "closing";
             // 
             // setMorphologyToolStripMenuItem
             // 
             this.setMorphologyToolStripMenuItem.Name = "setMorphologyToolStripMenuItem";
-            this.setMorphologyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setMorphologyToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.setMorphologyToolStripMenuItem.Text = "set morphology";
             this.setMorphologyToolStripMenuItem.Click += new System.EventHandler(this.setMorphologyToolStripMenuItem_Click);
             // 
@@ -654,9 +672,10 @@ namespace filters
             // 
             this.pictureBox2.Image = global::filters.Properties.Resources.thomas_shelby_smoking;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(236, 45);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 27);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(574, 582);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 71;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
@@ -673,12 +692,12 @@ namespace filters
             this.pictureBox1.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pictureBox1_LoadCompleted);
             this.pictureBox1.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.pictureBox1_LoadProgressChanged);
             // 
-            // максимумToolStripMenuItem
+            // опорныйЦветToolStripMenuItem
             // 
-            this.максимумToolStripMenuItem.Name = "максимумToolStripMenuItem";
-            this.максимумToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.максимумToolStripMenuItem.Text = "Максимум";
-            this.максимумToolStripMenuItem.Click += new System.EventHandler(this.максимумToolStripMenuItem_Click);
+            this.опорныйЦветToolStripMenuItem.Name = "опорныйЦветToolStripMenuItem";
+            this.опорныйЦветToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.опорныйЦветToolStripMenuItem.Text = "Опорный Цвет";
+            this.опорныйЦветToolStripMenuItem.Click += new System.EventHandler(this.опорныйЦветToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -801,6 +820,8 @@ namespace filters
         private System.Windows.Forms.ToolStripMenuItem тисToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem максимумToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem серыйМирToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem опорныйЦветToolStripMenuItem;
     }
 }
 
