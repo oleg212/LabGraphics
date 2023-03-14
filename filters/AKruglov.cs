@@ -66,19 +66,6 @@ namespace filters
                         B = cur;
                     if (b > cur)
                         b = cur;
-/*                    if (R < Img.GetPixel(i, j).R)
-                        R = Img.GetPixel(i, j).R;
-                    if (G < Img.GetPixel(i, j).G)
-                        G = Img.GetPixel(i, j).G;
-                    if (B < Img.GetPixel(i, j).B)
-                        B = Img.GetPixel(i, j).B;
-                    if (r > Img.GetPixel(i, j).R)
-                        r = Img.GetPixel(i, j).R;
-                    if (g > Img.GetPixel(i, j).G)
-                        g = Img.GetPixel(i, j).G;
-                    if (b > Img.GetPixel(i, j).B)
-                        b = Img.GetPixel(i, j).B;
-*/
                 }
             return true;
         }
@@ -91,4 +78,83 @@ namespace filters
             return ResColor;
         }
     }
+
+    public class GreyWorldFilter : filters
+    {
+        double R, G, B, A;
+        bool IsPrepDone = false;
+        protected bool Preparation(Bitmap Img)
+        {
+            R = G = B = 0.0;
+            for (int i = 0; i < Img.Width; i++)
+                for (int j = 0; j < Img.Height; j++)
+                {
+                    R += Img.GetPixel(i, j).R;
+                    G += Img.GetPixel(i, j).G;
+                    B += Img.GetPixel(i, j).B;
+                }
+            R /= Img.Width * Img.Height;
+            G /= Img.Width * Img.Height;
+            B /= Img.Width * Img.Height;
+            /*            int[] r = new int[256];
+                        int[] g = new int[256];
+                        int[] b = new int[256];
+                        for (int i = 0; i < Img.Width; i++)
+                            for (int j = 0; j < Img.Height; j++)
+                            {
+                                r[Img.GetPixel(i, j).R]++;
+                                g[Img.GetPixel(i, j).G]++;
+                                b[Img.GetPixel(i, j).B]++;
+                            }
+                        int w = Img.Width;
+                        int h = Img.Height;
+                        for (int i = 0; i < 256; i++)
+                        {
+                            r[i] /= w * h;
+                            g[i] /= w * h;
+                            b[i] /= w * h;
+                        }
+                        for (int i = 0; i < 256; i++)
+                        {
+                            R += r[i];
+                            G += g[i];
+                            B += b[i];
+                        }*/
+            A = (R + G + B) / 3.0;
+            return true;
+        }
+        protected override Color MakeNewColor(Bitmap Img, int x, int y)
+        {
+            if (!IsPrepDone)
+                IsPrepDone = Preparation(Img);
+            Color SourceColor = Img.GetPixel(x, y);
+            Color ResColor = Color.FromArgb(clamp((int)(SourceColor.R * A / R), 0, 255), clamp((int)(SourceColor.G * A / G), 0, 255), clamp((int)(SourceColor.B * A / B), 0, 255));
+            return ResColor;
+        }
+    }
+
+    public class SourceColorFilter : filters
+    {
+        Color srcColor, targetColor;
+        bool IsPrepDone = false;
+
+        public SourceColorFilter()
+        {
+            srcColor = Color.Cyan;
+            targetColor = Color.Yellow;
+        }
+        protected bool Preparation(Bitmap Img)
+        {
+            return true;
+        }
+        protected override Color MakeNewColor(Bitmap Img, int x, int y)
+        {
+            if (!IsPrepDone)
+                IsPrepDone = Preparation(Img);
+            Color SourceColor = Img.GetPixel(x, y);
+            Color ResColor = Color.FromArgb(clamp((int)(SourceColor.R * targetColor.R / (srcColor.R + 1)), 0, 255), clamp((int)(SourceColor.G * targetColor.G / (srcColor.G + 1)), 0, 255), clamp((int)(SourceColor.B * targetColor.B / (srcColor.B + 1)), 0, 255));
+            return ResColor;
+        }
+    }
 }
+

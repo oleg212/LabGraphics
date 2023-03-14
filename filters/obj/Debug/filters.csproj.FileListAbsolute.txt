@@ -30,3 +30,13 @@ C:\Users\ipnnr\Documents\repos\LabGraphics-fullproj-main\filters\obj\Debug\filte
 C:\Users\ipnnr\Documents\repos\LabGraphics-fullproj-main\filters\obj\Debug\filters.csproj.CoreCompileInputs.cache
 C:\Users\ipnnr\Documents\repos\LabGraphics-fullproj-main\filters\obj\Debug\filters.exe
 C:\Users\ipnnr\Documents\repos\LabGraphics-fullproj-main\filters\obj\Debug\filters.pdb
+D:\git_reps\filters\LabGraphics-1\filters\bin\Debug\filters.exe.config
+D:\git_reps\filters\LabGraphics-1\filters\bin\Debug\filters.exe
+D:\git_reps\filters\LabGraphics-1\filters\bin\Debug\filters.pdb
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.csproj.AssemblyReference.cache
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.Form1.resources
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.Properties.Resources.resources
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.csproj.GenerateResource.cache
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.csproj.CoreCompileInputs.cache
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.exe
+D:\git_reps\filters\LabGraphics-1\filters\obj\Debug\filters.pdb
